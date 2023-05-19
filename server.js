@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ["http://localhost:3000", "https://openfabric.netlify.app", "https://openfabric.netlify.app/"],
+  origin: ["http://localhost:3000", "https://open-fabric-frontend-redskull-127.vercel.app"],
 }));
 app.get("/", verifyToken,async (req, res) => {
   let collection = db.collection("backend");
