@@ -53,7 +53,7 @@ app.post("/auth", (req, res) => {
   }
   if (
     bcrypt.compare(password, process.env.Password) &&
-    email === process.env.Email
+    email === process.env.email
   ) {
     const token = jwt.sign({ email }, process.env.TOKEN_KEY);
     res.status(200).json({ token: token, expiresIn: "Never" });
