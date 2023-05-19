@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "*",
 }));
 app.get("/", verifyToken,async (req, res) => {
   let collection = db.collection("backend");
