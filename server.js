@@ -52,10 +52,10 @@ app.post("/auth", (req, res) => {
     res.status(400).send("All input is required");
   }
   if (
-    bcrypt.compare(password, process.env.Password) &&
-    email === process.env.email
+    bcrypt.compare(password, '$2a$10$V29/zxy3TZ7A6Pt4uFIRzu66WTk8IV1.5JLazERg6qJ2Yi33pH5nq') &&
+    email === 'openfabric@gmail.com'
   ) {
-    const token = jwt.sign({ email }, process.env.TOKEN_KEY);
+    const token = jwt.sign({ email }, 'secretkey');
     res.status(200).json({ token: token, expiresIn: "Never" });
   }
   // res.status(400).send("Invalid Credentials");
