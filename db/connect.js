@@ -1,6 +1,6 @@
 import { MongoClient, ObjectId } from "mongodb";
 
-const connectionString = "mongodb+srv://meertarbani:Hmeer1257@cluster0.fjzl35w.mongodb.net/?retryWrites=true&w=majority";
+const connectionString = process.env.MONGO_DB;
 
 const client = new MongoClient(connectionString);
 
